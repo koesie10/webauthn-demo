@@ -14,6 +14,10 @@ github.com/koesie10/webauthn v0.0.0-20180918152532-a56a0e171a2d h1:VyThC9PUR35V0
 github.com/koesie10/webauthn v0.0.0-20180918152532-a56a0e171a2d/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
 github.com/koesie10/webauthn v0.0.0-20180918182804-75772231cb2a h1:gPZ6lzXYRZ7HxBgL7VBKxnNxxP30vhr7+XAlDZTT3DA=
 github.com/koesie10/webauthn v0.0.0-20180918182804-75772231cb2a/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
+github.com/koesie10/webauthn v0.0.0-20180918183950-571c4f9d774b h1:WJ3++z38vYVzJm6umVLGFKA/eGq0GzAJxn6uJ1o3Sqw=
+github.com/koesie10/webauthn v0.0.0-20180918183950-571c4f9d774b/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
+github.com/koesie10/webauthn v0.0.0-20180918184251-d80536359b77 h1:Kc+JvAn61N//JEkhbZOa5Tn/NiJPlbVqObv1/MQPm2Y=
+github.com/koesie10/webauthn v0.0.0-20180918184251-d80536359b77/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
 github.com/labstack/echo v0.0.0-20180911044237-1abaa3049251 h1:4q++nZ4OEtmbHazhA/7i3T9B+CBWtnHpuMMcW55ZjRk=
 github.com/labstack/echo v0.0.0-20180911044237-1abaa3049251/go.mod h1:rWD2DNQgFb1IY9lVYZVLWn2Ko4dyHZ/LpHORyBLP3hI=
 github.com/labstack/echo-contrib v0.0.0-20180222075343-7d9d9632a4aa h1:Vvq1WVdHKCWY5VhBRFsyNtaAlqzPIBHYN1nzVhlGUqs=

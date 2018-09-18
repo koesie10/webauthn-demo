@@ -9,7 +9,7 @@ import (
 func Index(c echo.Context) error {
 	return c.HTML(http.StatusOK, `<html>
 <head>
-	<title>WebAuthN demo</title>
+	<title>WebAuthn demo</title>
 	<style>
 		.hide {
 			display: none;
@@ -20,9 +20,9 @@ func Index(c echo.Context) error {
 </head>
 <body>
 <div class="container mt-4">
-	<h1>WebAuthN Demo</h1>
+	<h1>WebAuthn Demo</h1>
 
-	<p>This is a demo of the WebAuthN library for Go.</p>
+	<p>This is a demo of the WebAuthn library for Go.</p>
 	<p>You can try registering or logging in. If the username is not found when logging in, you can login as any account where your authenticator is registered. So you might be logged in to the account you registered before.</p>
 
 	<div class="card mt-3">
@@ -49,15 +49,19 @@ func Index(c echo.Context) error {
 </div>
 
 	<script type="text/javascript">
-class WebAuthN {
+// This is a modification of the example class, where the URLs have been changed to include the name.
+class WebAuthn {
+	// Decode a base64 string into a Uint8Array.
 	static _decodeBuffer(value) {
 		return Uint8Array.from(atob(value), c => c.charCodeAt(0));
 	}
 
+	// Encode an ArrayBuffer into a base64 string.
 	static _encodeBuffer(value) {
 		return btoa(new Uint8Array(value).reduce((s, byte) => s + String.fromCharCode(byte), ''));
 	}
 
+	// Checks whether the status returned matches the status given.
 	static _checkStatus(status) {
 		return res => {
 			if (res.status === status) {
@@ -71,14 +75,14 @@ class WebAuthN {
 		return fetch('/webauthn/registration/start/' + name, {
 				method: 'POST'
 			})
-			.then(WebAuthN._checkStatus(200))
+			.then(WebAuthn._checkStatus(200))
 			.then(res => res.json())
 			.then(res => {
-				res.publicKey.challenge = WebAuthN._decodeBuffer(res.publicKey.challenge);
-				res.publicKey.user.id = WebAuthN._decodeBuffer(res.publicKey.user.id);
+				res.publicKey.challenge = WebAuthn._decodeBuffer(res.publicKey.challenge);
+				res.publicKey.user.id = WebAuthn._decodeBuffer(res.publicKey.user.id);
 				if (res.publicKey.excludeCredentials) {
 					for (var i = 0; i < res.publicKey.excludeCredentials.length; i++) {
-						res.publicKey.excludeCredentials[i].id = WebAuthN._decodeBuffer(res.publicKey.excludeCredentials[i].id);
+						res.publicKey.excludeCredentials[i].id = WebAuthn._decodeBuffer(res.publicKey.excludeCredentials[i].id);
 					}
 				}
 				return res;
@@ -93,34 +97,29 @@ class WebAuthN {
 					},
 					body: JSON.stringify({
 						id: credential.id,
-						rawId: WebAuthN._encodeBuffer(credential.rawId),
+						rawId: WebAuthn._encodeBuffer(credential.rawId),
 						response: {
-							attestationObject: WebAuthN._encodeBuffer(credential.response.attestationObject),
-							clientDataJSON: WebAuthN._encodeBuffer(credential.response.clientDataJSON)
+							attestationObject: WebAuthn._encodeBuffer(credential.response.attestationObject),
+							clientDataJSON: WebAuthn._encodeBuffer(credential.response.clientDataJSON)
 						},
 						type: credential.type
 					}),
 				})
 			})
-			.then(WebAuthN._checkStatus(201))
-			.then(res => alert('This authenticator has been registered'))
-			.catch(err => {
-				console.error(err)
-				alert('Failed to register: ' + err);
-			});
+			.then(WebAuthn._checkStatus(201));
 	}
 
 	login(name) {
 		return fetch('/webauthn/login/start/' + name, {
 				method: 'POST'
 			})
-			.then(WebAuthN._checkStatus(200))
+			.then(WebAuthn._checkStatus(200))
 			.then(res => res.json())
 			.then(res => {
-				res.publicKey.challenge = WebAuthN._decodeBuffer(res.publicKey.challenge);
+				res.publicKey.challenge = WebAuthn._decodeBuffer(res.publicKey.challenge);
 				if (res.publicKey.allowCredentials) {
 					for (let i = 0; i < res.publicKey.allowCredentials.length; i++) {
-						res.publicKey.allowCredentials[i].id = WebAuthN._decodeBuffer(res.publicKey.allowCredentials[i].id);
+						res.publicKey.allowCredentials[i].id = WebAuthn._decodeBuffer(res.publicKey.allowCredentials[i].id);
 					}
 				}
 				return res;
@@ -135,31 +134,25 @@ class WebAuthN {
 					},
 					body: JSON.stringify({
 						id: credential.id,
-						rawId: WebAuthN._encodeBuffer(credential.rawId),
+						rawId: WebAuthn._encodeBuffer(credential.rawId),
 						response: {
-							clientDataJSON: WebAuthN._encodeBuffer(credential.response.clientDataJSON),
-							authenticatorData: WebAuthN._encodeBuffer(credential.response.authenticatorData),
-							signature: WebAuthN._encodeBuffer(credential.response.signature),
-							userHandle: WebAuthN._encodeBuffer(credential.response.userHandle),
+							clientDataJSON: WebAuthn._encodeBuffer(credential.response.clientDataJSON),
+							authenticatorData: WebAuthn._encodeBuffer(credential.response.authenticatorData),
+							signature: WebAuthn._encodeBuffer(credential.response.signature),
+							userHandle: WebAuthn._encodeBuffer(credential.response.userHandle),
 						},
 						type: credential.type
 					}),
 				})
 			})
-			.then(WebAuthN._checkStatus(200))
-			.then(res => res.json())
-			.then(res => alert('You have been logged in to ' + res.name))
-			.catch(err => {
-				console.error(err)
-				alert('Failed to login: ' + err);
-			});
+			.then(WebAuthn._checkStatus(200));
 	}
 }
 
 let registerPending = false;
 let loginPending = false;
 
-let w = new WebAuthN();
+let w = new WebAuthn();
 
 document.getElementById("registerForm").onsubmit = function(e) {
 	e.preventDefault();
@@ -170,10 +163,16 @@ document.getElementById("registerForm").onsubmit = function(e) {
 	document.getElementById("registerLoading").classList.remove("hide");
 
 	const name = document.getElementById("registerName").value;
-	w.register(name).then(() => {
-		registerPending = false;
-		document.getElementById("registerLoading").classList.add("hide");
-	});
+	w.register(name)
+			.then(res => alert('This authenticator has been registered'))
+			.catch(err => {
+				console.error(err)
+				alert('Failed to register: ' + err);
+			})
+			.then(() => {
+				registerPending = false;
+				document.getElementById("registerLoading").classList.add("hide");
+			});
 };
 
 document.getElementById("loginForm").onsubmit = function(e) {
@@ -185,10 +184,17 @@ document.getElementById("loginForm").onsubmit = function(e) {
 	document.getElementById("loginLoading").classList.remove("hide");
 
 	const name = document.getElementById("loginName").value;
-	w.login(name).then(() => {
-		loginPending = false;
-		document.getElementById("loginLoading").classList.add("hide");
-	});
+	w.login(name)
+			.then(res => res.json())
+			.then(res => alert('You have been logged in to ' + res.name))
+			.catch(err => {
+				console.error(err)
+				alert('Failed to login: ' + err);
+			})
+			.then(() => {
+				loginPending = false;
+				document.getElementById("loginLoading").classList.add("hide");
+			});
 };
 	</script>
 </body>
