@@ -15,22 +15,38 @@ func Index(c echo.Context) error {
 			display: none;
 		}
 	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div class="container mt-4">
 	<h1>WebAuthN Demo</h1>
 
-	<p class="hide" id="registerLoading">Registering... Please tap your authenticator.</p>
-	<p class="hide" id="loginLoading">Logging in... Please tap your authenticator.</p>
+	<p>This is a demo of the WebAuthN library for Go.</p>
+	<p>You can try registering or logging in. If the username is not found when logging in, you can login as any account where your authenticator is registered. So you might be logged in to the account you registered before.</p>
 
-	<form method="post" id="registerForm">
-		<input type="text" name="name" id="registerName" />
-		<button type="submit">Register</button>
-	</form>
+	<div class="card mt-3">
+		<div class="card-body">
+			<p class="hide lead" id="registerLoading">Registering... Please tap your authenticator.</p>
 
-	<form method="post" id="loginForm">
-		<input type="text" name="name" id="loginName" />
-		<button type="submit">Login</button>
-	</form>
+			<form method="post" id="registerForm">
+				<input type="text" name="name" id="registerName" class="form-control" placeholder="Username" />
+				<button type="submit" class="btn btn-success mt-3">Register</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="card mt-3">
+		<div class="card-body">
+			<p class="hide lead" id="loginLoading">Logging in... Please tap your authenticator.</p>
+
+			<form method="post" id="loginForm">
+				<input type="text" name="name" id="loginName" class="form-control" placeholder="Username" />
+				<button type="submit" class="btn btn-primary mt-3">Login</button>
+			</form>
+		</div>
+	</div>
+</div>
 
 	<script type="text/javascript">
 class WebAuthN {
