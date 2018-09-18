@@ -1,3 +1,4 @@
+github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -11,6 +12,8 @@ github.com/gorilla/sessions v1.1.2 h1:4esMHhwKLQ9Odtku/p+onvH+eRJFWjV4y3iTDVWrZN
 github.com/gorilla/sessions v1.1.2/go.mod h1:8KCfur6+4Mqcc6S0FEfKuN15Vl5MgXW92AE8ovaJD0w=
 github.com/koesie10/webauthn v0.0.0-20180918152532-a56a0e171a2d h1:VyThC9PUR35V0o2mbpEIPVXi8pR9x7sJ5afoA/jcpW4=
 github.com/koesie10/webauthn v0.0.0-20180918152532-a56a0e171a2d/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
+github.com/koesie10/webauthn v0.0.0-20180918182804-75772231cb2a h1:gPZ6lzXYRZ7HxBgL7VBKxnNxxP30vhr7+XAlDZTT3DA=
+github.com/koesie10/webauthn v0.0.0-20180918182804-75772231cb2a/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
 github.com/labstack/echo v0.0.0-20180911044237-1abaa3049251 h1:4q++nZ4OEtmbHazhA/7i3T9B+CBWtnHpuMMcW55ZjRk=
 github.com/labstack/echo v0.0.0-20180911044237-1abaa3049251/go.mod h1:rWD2DNQgFb1IY9lVYZVLWn2Ko4dyHZ/LpHORyBLP3hI=
 github.com/labstack/echo-contrib v0.0.0-20180222075343-7d9d9632a4aa h1:Vvq1WVdHKCWY5VhBRFsyNtaAlqzPIBHYN1nzVhlGUqs=
@@ -31,6 +34,7 @@ github.com/pkg/errors v0.8.0 h1:WdK/asTD0HN+q6hsWO3/vpuAkAr+tw6aNJNDFFf0+qw=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/stretchr/testify v1.2.1 h1:52QO5WkIUcHGIR7EnGagH88x1bUzqGXTC5/1bDTUQ7U=
 github.com/stretchr/testify v1.2.1/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1w=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
@@ -46,6 +50,7 @@ golang.org/x/crypto v0.0.0-20180312195533-182114d58262 h1:1NLVUmR8SQ7cNNA5Vo7ron
 golang.org/x/crypto v0.0.0-20180312195533-182114d58262/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20180910181607-0e37d006457b h1:2b9XGzhjiYsYPnKXoEfL7klWZQIt8IfyRCz62gCqqlQ=
 golang.org/x/crypto v0.0.0-20180910181607-0e37d006457b/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+golang.org/x/sys v0.0.0-20180312081825-c28acc882ebc h1:eCzBKjjvhDDXMoH5l7eA+YK1PEtyJ2QLj3f4IArr+zg=
 golang.org/x/sys v0.0.0-20180312081825-c28acc882ebc/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20180909124046-d0be0721c37e h1:o3PsSEY8E4eXWkXrIP9YJALUkVZqzHJT5DOasTyn8Vs=
 golang.org/x/sys v0.0.0-20180909124046-d0be0721c37e/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
