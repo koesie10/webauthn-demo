@@ -57,6 +57,7 @@ github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCV
 github.com/json-iterator/go v1.1.7/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/koesie10/webauthn v0.0.0-20180919100834-ed4b48407004/go.mod h1:yDDUX62xxWj8BpTuwvFgSWQ37Nr4vHZHm8lYz+44jb8=
+github.com/koesie10/webauthn v0.3.5-0.20200226152618-8626f9623b4b/go.mod h1:cLEH6aI9r9VhNpmSbfaOuUhzOI9luVkI69aywb4Soog=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
 github.com/labstack/echo v0.0.0-20180911044237-1abaa3049251 h1:4q++nZ4OEtmbHazhA/7i3T9B+CBWtnHpuMMcW55ZjRk=
