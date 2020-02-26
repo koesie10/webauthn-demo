@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/koesie10/webauthn/webauthn"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo-contrib/session"
